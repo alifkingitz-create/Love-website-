@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>For My Love ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+overflow-x:hidden;
+}
+
+h1{
+margin-top:60px;
+font-size:40px;
+}
+
+#message{
+font-size:22px;
+margin:20px;
+}
+
+.gallery img{
+width:220px;
+border-radius:20px;
+margin:10px;
+box-shadow:0 0 10px black;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+}
+
+#yes{
+background:white;
+color:#ff4d6d;
+}
+
+#no{
+background:#ff4d6d;
+color:white;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+color:red;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(0)}
+100%{transform:translateY(100vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Hi My Love ❤️</h1>
+
+<div id="message"></div>
+
+<h2>Our Memories 📸</h2>
+
+<div class="gallery">
+
+<img src="IMG_20251009_112859_800.jpg">
+<img src="IMG_20251009_112939_050.jpg">
+<img src="Screenshot_20251231_162005.jpg">
+
+</div>
+
+<h2>Will You Stay With Me Forever? 💍</h2>
+
+<button id="yes" onclick="yes()">Yes ❤️</button>
+
+<button id="no" onclick="no()">No 😢</button>
+
+<audio autoplay loop>
+<source src="NAZAR NA LAG JAAYE SONG STATUS FULL SCREEN #ashking.mp3" type="NAZAR NA LAG JAAYE SONG STATUS FULL SCREEN #ashking./mp3">
+</audio>
+
+<script>
+
+var text="You are the most beautiful part of my life ❤️";
+var i=0;
+
+function typing(){
+
+if(i < text.length){
+
+document.getElementById("message").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typing,80);
+
+}
+
+}
+
+typing();
+
+function yes(){
+
+alert("Yay! I Love You Forever ❤️");
+
+confetti();
+
+}
+
+function no(){
+
+alert("No option not allowed 😜");
+
+}
+
+setInterval(function(){
+
+var heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=Math.random()*30+20+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove()},5000);
+
+},300);
+
+function confetti(){
+
+for(let i=0;i<100;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML="🎉";
+
+c.style.position="fixed";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.top=Math.random()*100+"vh";
+
+c.style.fontSize="25px";
+
+document.body.appendChild(c);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
